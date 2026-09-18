@@ -1,0 +1,46 @@
+question,domain,model,citation_num,citation_text,category,error_type,notes
+Q3,CRISPR,DeepSeek,1,"Hanna et al. (2026). CRISPR-Cas12a Gene Editing of HBG1 and HBG2 Promoters. NEJM, 394(13), 1281-1291",Real & Accurate,,DOI verified
+Q3,CRISPR,DeepSeek,2,"Grupp et al. (2026). Durable Clinical Benefits... Transplantation and Cellular Therapy, 32(2), S2-S3",Real & Accurate,,Verified via ScienceDirect
+Q3,CRISPR,DeepSeek,3,"Ahmed et al. (2026). CRISPR/Cas9 System as a Promising Therapy... Molecular Biotechnology, 68(1), 23-32",Real & Accurate,,Verified via PubMed
+Q3,CRISPR,DeepSeek,4,"Shaik & Divers (2026). Efficacy, Safety... European Journal of Haematology",Real & Accurate,,Verified via PubMed
+Q3,CRISPR,DeepSeek,5,"Hanna et al. (2026). Translating CRISPR to Practice in the Clinic. JCO Oncology Practice",Real & Accurate,,Verified via ASCO
+Q3,CRISPR,Claude,1,"Frangoul et al. (2021). CRISPR-Cas9 Gene Editing for Sickle Cell Disease and beta-Thalassemia. NEJM, 384(3), 252-260",Real & Accurate,,DOI verified
+Q3,CRISPR,Claude,2,"Frangoul et al. (2024). Exagamglogene Autotemcel for Severe Sickle Cell Disease. NEJM, 390(18), 1649-1662",Real & Accurate,,DOI verified
+Q3,CRISPR,Claude,3,"Locatelli et al. (2024). Exagamglogene Autotemcel for Transfusion-Dependent beta-Thalassemia. NEJM, 390(18), 1663-1676",Real & Accurate,,DOI verified
+Q3,CRISPR,Claude,4,"Grupp et al. (2025). Long-term follow-up... Blood, 146(Suppl. 1), 2537",Real & Accurate,,Verified via Blood
+Q3,CRISPR,Claude,5,"Min (2024). Studies of Exagamglogene Autotemcel — Age and Place. NEJM, 391(6), 571-572",Real & Accurate,,DOI verified
+Q3,CRISPR,ChatGPT,1,"Frangoul et al. (2021). CRISPR-Cas9 Gene Editing for Sickle Cell Disease and beta-Thalassemia. NEJM",Real & Accurate,,DOI verified
+Q3,CRISPR,ChatGPT,2,"Frangoul et al. (2024). Exagamglogene Autotemcel for Severe Sickle Cell Disease. NEJM",Real & Accurate,,DOI verified
+Q3,CRISPR,ChatGPT,3,"Yen et al. (2024). Specificity of CRISPR-Cas9 Editing in Exagamglogene Autotemcel. NEJM",Real & Accurate,,DOI verified
+Q3,CRISPR,ChatGPT,4,"Hanna et al. (2026). CRISPR-Cas12a Gene Editing of HBG1 and HBG2 Promoters. NEJM",Real & Accurate,,DOI verified
+Q3,CRISPR,ChatGPT,5,"Zarghamian, Klermund & Cathomen (2023). Clinical genome editing to treat sickle cell disease-A brief update. HemaSphere",Real but Distorted,Wrong venue,Actual journal: Frontiers in Medicine
+Q4,Microbiome,DeepSeek,1,"Alauddin et al. (2026). Gut Microbiota, Neuroinflammation... Cureus, 18(8), e114312",Real & Accurate,,Verified
+Q4,Microbiome,DeepSeek,2,"Ashraf et al. (2025). Gut-brain relationship in dementia and Alzheimer's disease. Ageing Research Reviews, 111, 102843",Real but Distorted,Wrong authors,Actual authors: Mukherjee & Reddy
+Q4,Microbiome,DeepSeek,3,"Bhattacharjee et al. (2025). Gut-Brain Axis Dysregulation in Parkinson's Disease. Journal of Pharmaceutical Analysis, 101521",Real but Distorted,Wrong authors,Actual authors: Zhao et al.
+Q4,Microbiome,DeepSeek,4,"Chandra et al. (2025). Gut dysbiosis as a potential driver. Frontiers in Neuroscience, 19, 1600148",Real but Distorted,Wrong authors,Actual authors: Pfaffinger et al.
+Q4,Microbiome,DeepSeek,5,"Liu et al. (2025). Microbiota-gut-brain axis in neurodegenerative diseases. Molecular Biomedicine, 6, 64",Real but Distorted,Wrong authors,Actual authors: Chen et al.
+Q4,Microbiome,Claude,1,"Fang et al. (2024). Gut-brain axis dysregulation in Parkinson's disease. Journal of Pharmaceutical Analysis. DOI 10.1016/j.jpha.2025.101360",Real but Distorted,Wrong authors + wrong DOI,Actual authors: Zhao et al.; correct DOI is 101521
+Q4,Microbiome,Claude,2,"Klingelhoefer & Reichmann (2023). Gut-microbiome-brain axis. Frontiers in Aging Neuroscience",Real but Distorted,Wrong authors + wrong journal,Actual paper by Dos Santos et al. in Neural Regeneration Research
+Q4,Microbiome,Claude,3,"Liang, Pereira, Zhang & Rojas (2024). Gut Microbiome in Alzheimer's Disease. Current Neuropharmacology, 22(14), 2314-2329",Real & Accurate,,Verified
+Q4,Microbiome,Claude,4,"Perez-Pardo et al. (2018). Microbiome-Gut-Brain Axis and Toll-Like Receptors. Int J Mol Sci",Real but Distorted,Wrong authors,Actual authors: Caputi & Giron
+Q4,Microbiome,Claude,5,"Zhang et al. (2024). Gut microbiota metabolites. Frontiers in Pharmacology, 15, 1459655",Real & Accurate,,Verified
+Q4,Microbiome,ChatGPT,1,"Sampson et al. (2016). Gut Microbiota Regulate Motor Deficits. Cell",Real & Accurate,,DOI verified
+Q4,Microbiome,ChatGPT,2,"Tan, Lim & Lang (2022). The microbiome-gut-brain axis in Parkinson disease. Nature Reviews Neurology",Real & Accurate,,DOI verified
+Q4,Microbiome,ChatGPT,3,"Seo & Holtzman (2024). Current understanding of the Alzheimer's disease-associated microbiome. Experimental & Molecular Medicine",Real & Accurate,,DOI verified
+Q4,Microbiome,ChatGPT,4,"Zhou et al. (2025). The complex relationship between gut microbiota and Alzheimer's disease. Ageing Research Reviews",Real & Accurate,,DOI verified
+Q4,Microbiome,ChatGPT,5,"Zhang et al. (2024). Microbiota-gut-brain axis and its therapeutic applications. Signal Transduction and Targeted Therapy",Real but Distorted,Wrong authors,Actual authors: Loh et al.
+Q5,Superconductivity,DeepSeek,1,"Yao & Carpenter-Bloudoff (2026). Hydrogen-rich superconductors under extreme pressure. J Phys Condens Matter, 38(27), 273002",Real & Accurate,,DOI verified
+Q5,Superconductivity,DeepSeek,2,"Hirsch (2023). Electrical resistance of hydrides under high pressure. J Supercond Nov Magn, 36, 1495-1501",Real & Accurate,,DOI verified
+Q5,Superconductivity,DeepSeek,3,"Minkov et al. (2022). Revaluation of the lower critical field... Nature Communications, 13, 3194",Real but Distorted,Wrong title,Actual title: Magnetic field screening in hydrogen-rich high-temperature superconductors
+Q5,Superconductivity,DeepSeek,4,"Song et al. (2023). Stoichiometric ternary superhydride LaBeH8. Phys Rev Lett, 130, 266001",Real & Accurate,,DOI verified
+Q5,Superconductivity,DeepSeek,5,"Zhang et al. (2024). The current status and future development. National Science Review, 11(7), nwae047",Real but Distorted,Wrong author,Actual author: Eremets
+Q5,Superconductivity,Claude,1,"Snider et al. (2020). Room-temperature superconductivity in a carbonaceous sulfur hydride. Nature, 586, 373-377",Real & Accurate,,Retracted 2022 - correctly noted
+Q5,Superconductivity,Claude,2,"Drozdov et al. (2019). Superconductivity at 250 K in lanthanum hydride. Nature, 569, 528-531",Real & Accurate,,DOI verified
+Q5,Superconductivity,Claude,3,"Drozdov et al. (2015). Conventional superconductivity at 203 kelvin. Nature, 525, 73-76",Real & Accurate,,DOI verified
+Q5,Superconductivity,Claude,4,"Minkov et al. (2022). Magnetic field screening in hydrogen-rich high-temperature superconductors. Nature Communications, 13, 3194",Real & Accurate,,DOI verified
+Q5,Superconductivity,Claude,5,"Hirsch & Marsiglio (2022). Nonstandard superconductivity or no superconductivity. Phys Rev B, 106, 214511",Real but Distorted,Wrong year/volume/DOI,Actual paper: Phys Rev B 103, 134505 (2021)
+Q5,Superconductivity,ChatGPT,1,"Drozdov et al. (2015). Conventional superconductivity at 203 kelvin. Nature",Real & Accurate,,DOI verified
+Q5,Superconductivity,ChatGPT,2,"Drozdov et al. (2019). Superconductivity at 250 K. Nature",Real & Accurate,,DOI verified
+Q5,Superconductivity,ChatGPT,3,"Errea et al. (2020). Quantum hydrogen-bond symmetrization. Nature",Real & Accurate,,DOI verified
+Q5,Superconductivity,ChatGPT,4,"Sun et al. (2021). High-temperature superconductivity on the verge of a structural instability. Nature Communications",Real but Distorted,Wrong author initial,Actual first author: Dan Sun (not Y.)
+Q5,Superconductivity,ChatGPT,5,"Bianconi & Jarlborg (2021). Superconductivity above 100 K in MgB2-type structures. J Supercond Nov Magn. DOI 10.1007/s10948-021-05995-0",Fully Fabricated,None,Paper does not exist; DOI does not resolve
