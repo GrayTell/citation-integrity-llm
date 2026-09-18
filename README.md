@@ -68,7 +68,7 @@ citation-integrity-llm/
 
 ## The Paper
 
-📄 **[Read the full paper →](citation_integrity_llm.md)**
+📄 **[Read the full paper →](citation_integrity_llm)**
 
 Full title: *Citation Integrity in Frontier Language Models: Author Misattribution and Fabrication in Research-Agent Conditions*
 
