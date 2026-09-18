@@ -36,7 +36,7 @@ Models frequently produced citations with a correct DOI, correct title, and corr
 
 Claude was the most accurate. ChatGPT produced the only fabrication. DeepSeek had the highest distortion rate (40%), almost all through wrong author attribution.
 
-## Benchmark img
+## Benchmark Image
 
 <p align="center">
   <img src="/benchmark.png" alt="Citation Integrity Benchmark" width="100%">
