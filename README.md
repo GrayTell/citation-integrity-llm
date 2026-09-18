@@ -36,6 +36,14 @@ Models frequently produced citations with a correct DOI, correct title, and corr
 
 Claude was the most accurate. ChatGPT produced the only fabrication. DeepSeek had the highest distortion rate (40%), almost all through wrong author attribution.
 
+## Benchmark img
+
+<p align="center">
+  <img src="/benchmark.png" alt="Citation Integrity Benchmark" width="100%">
+</p>
+
+# Citation Integrity in Frontier Language Models
+
 ## Why This Matters
 
 Research agents — including the ones we are building at GrayTell — currently rely on **DOI resolution** or **title matching** to verify citations. This study shows that is not enough.
