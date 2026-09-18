@@ -1,0 +1,219 @@
+# Citation Integrity in Frontier Language Models: Author Misattribution and Fabrication in Research-Agent Conditions
+
+**Author:** Anubhav Sapkota  
+**Affiliation:** GrayTell Labs  
+**Date:** September 18, 2026  
+**Contact:** sapkotaanubhav91@gmail.com
+
+---
+
+## Abstract
+
+We evaluate the citation accuracy of three frontier language models—DeepSeek, Claude, and ChatGPT—when forced to provide formal academic references in response to research questions. Across 15 responses and 45 citations spanning three domains (CRISPR therapies, gut microbiome, and high-temperature superconductivity), we find that 71% of citations were real and accurate, 27% were real but distorted (primarily author misattribution), and 2% were fully fabricated. The dominant failure mode is not fabrication of non-existent papers but distortion of existing papers, most commonly by attributing them to incorrect authors. Model performance varied: Claude achieved 80% accuracy, ChatGPT 73% (with one fabrication), and DeepSeek 60%. These findings suggest that research agents must implement author-level verification, not merely DOI resolution, to ensure citation integrity.
+
+---
+
+## 1. Introduction
+
+Large language models (LLMs) are increasingly deployed as research assistants, literature review tools, and autonomous research agents. In these roles, they are often expected to provide citations to support their claims. The integrity of these citations is critical: fabricated or distorted references can mislead researchers, propagate misinformation, and undermine trust in AI-assisted research.
+
+Prior work has documented that LLMs can hallucinate references—inventing papers that do not exist (Walters & Wilder, 2023; Bhattacharyya et al., 2023). However, most studies focus on fully fabricated citations. Less is known about *distorted* citations: real papers that are misattributed to wrong authors, assigned incorrect years, or published in wrong venues. These distortions are arguably more dangerous because they survive superficial verification—a DOI or title search will confirm the paper exists, but the researcher may not notice that the authors are wrong.
+
+In this paper, we present a small-scale but systematic evaluation of citation integrity in three frontier models: DeepSeek, Claude, and ChatGPT. We force the models to provide formal academic references in a strict format, then manually verify every citation against authoritative sources. Our goal is to characterize the *types* of citation errors that occur, not just their frequency.
+
+We find that fabrication is rare (2%), but distortion is common (27%). The dominant failure mode is **author misattribution**: citing a real paper but crediting it to the wrong authors. This has direct implications for the design of research agents, which currently rely on DOI resolution or title matching for citation verification.
+
+---
+
+## 2. Related Work
+
+Hallucination in LLMs has been extensively studied (Ji et al., 2023). In the context of citation generation, several studies have reported high rates of fabricated references. Walters & Wilder (2023) found that ChatGPT generated fabricated citations in response to academic queries. Bhattacharyya et al. (2023) reported that a majority of ChatGPT-generated medical references were fabricated or inaccurate.
+
+Attribution and faithfulness in natural language generation have also been explored (Maynez et al., 2020; Rashkin et al., 2021; Bohnet et al., 2022). These works focus on whether generated text is supported by cited sources, but they do not typically evaluate the accuracy of the citation metadata itself.
+
+Our work contributes a fine-grained analysis of citation errors, distinguishing between fabrication, distortion, and accuracy. We also evaluate multiple models and multiple domains, providing a comparative perspective.
+
+---
+
+## 3. Methodology
+
+### 3.1 Models
+
+We evaluated three frontier models:
+
+- **DeepSeek** (version unspecified; accessed via web interface)
+- **Claude** (version unspecified; accessed via web interface)
+- **ChatGPT** (version unspecified; accessed via web interface)
+
+All models were accessed in September 2026. Exact version numbers were not recorded, which is a limitation of this study.
+
+### 3.2 Questions
+
+We designed five research questions across three domains:
+
+1. How effective are constitutional AI methods at reducing harmful outputs in large language models? (AI/ML)
+2. What are the main limitations of current retrieval-augmented generation (RAG) systems? (AI/ML)
+3. What is the current evidence on CRISPR-based therapies for sickle cell disease? (Biology/Medicine)
+4. How does the gut microbiome influence neurodegenerative diseases such as Parkinson's and Alzheimer's? (Biology/Medicine)
+5. What is the current status of research on high-temperature superconductivity in hydrogen-rich materials? (Physics)
+
+Questions 1 and 2 were pilot questions. The models did not provide formal citations in response to these questions even when asked, so they were excluded from the citation analysis. Questions 3–5 form the core dataset.
+
+### 3.3 Prompt Design
+
+For Questions 3–5, we used the following strict prompt:
+
+> Answer the following research question and provide 4–5 academic citations.
+>
+> You MUST include a separate "References" section.
+> Each reference must follow exactly:
+>
+> Authors. (Year). Title. Venue. DOI/URL (if available).
+>
+> Do not just describe studies — list the actual papers.
+>
+> Question: [QUESTION]
+
+### 3.4 Verification Process
+
+Every citation produced by the models was manually verified using the following sources: Google Scholar, PubMed, DOI resolution (doi.org), and publisher websites (NEJM, Nature, Science, etc.). We checked whether the paper exists, whether the title is correct, whether the authors are correct, whether the year is correct, whether the venue is correct, and whether the DOI resolves to the correct paper.
+
+### 3.5 Scoring Categories
+
+Each citation was classified into one of three categories:
+
+- **Real & Accurate** — Paper exists and all metadata (authors, year, title, venue) are correct.
+- **Real but Distorted** — Paper exists, but at least one metadata field is incorrect.
+- **Fully Fabricated** — No evidence that the paper exists.
+
+---
+
+## 4. Results
+
+### 4.1 Overall Citation Accuracy
+
+Across Questions 3–5, the three models produced a total of 45 citations.
+
+| Category | Count | Percentage |
+|----------|-------|------------|
+| Real & Accurate | 32 | 71% |
+| Real but Distorted | 12 | 27% |
+| Fully Fabricated | 1 | 2% |
+
+Fabrication was rare. Distortion was the dominant failure mode.
+
+### 4.2 Per-Model Performance
+
+| Model | Total | Accurate | Distorted | Fabricated | Accuracy Rate |
+|-------|-------|----------|-----------|------------|---------------|
+| DeepSeek | 15 | 9 | 6 | 0 | 60% |
+| Claude | 15 | 12 | 3 | 0 | 80% |
+| ChatGPT | 15 | 11 | 3 | 1 | 73% |
+
+Claude was the most accurate. ChatGPT produced the only fabrication. DeepSeek had the highest distortion rate.
+
+### 4.3 Per-Question Analysis
+
+| Question | Model | Citations | Accurate | Distorted | Fabricated |
+|----------|-------|-----------|----------|-----------|------------|
+| Q3 (CRISPR) | DeepSeek | 5 | 5 | 0 | 0 |
+| Q3 (CRISPR) | Claude | 5 | 5 | 0 | 0 |
+| Q3 (CRISPR) | ChatGPT | 5 | 4 | 1 | 0 |
+| Q4 (Microbiome) | DeepSeek | 5 | 1 | 4 | 0 |
+| Q4 (Microbiome) | Claude | 5 | 3 | 2 | 0 |
+| Q4 (Microbiome) | ChatGPT | 5 | 4 | 1 | 0 |
+| Q5 (Superconductivity) | DeepSeek | 5 | 3 | 2 | 0 |
+| Q5 (Superconductivity) | Claude | 5 | 4 | 1 | 0 |
+| Q5 (Superconductivity) | ChatGPT | 5 | 3 | 1 | 1 |
+
+The CRISPR question produced the most accurate citations. The microbiome and superconductivity questions produced more distortions. The only fabrication occurred on the superconductivity question, which was the hardest and most niche topic.
+
+### 4.4 Types of Distortions
+
+Of the 12 distorted citations, the breakdown by error type was:
+
+| Error Type | Count | Example |
+|------------|-------|---------|
+| Wrong authors | 9 | DeepSeek credited a real paper to "Ashraf, G. M." instead of actual authors. |
+| Wrong venue | 2 | ChatGPT cited Zarghamian et al. in *HemaSphere* (actual: *Frontiers in Medicine*). |
+| Wrong title | 1 | DeepSeek used the title of a different paper for a real DOI. |
+| Wrong year/volume/DOI | 1 | Claude cited Hirsch & Marsiglio (2022) in *Phys. Rev. B* 106, 214511 — actual paper is *Phys. Rev. B* 103, 134505 (2021). |
+
+Author misattribution was by far the most common distortion.
+
+### 4.5 Case Study: First Fabrication
+
+On Question 5, ChatGPT produced the following citation:
+
+> Bianconi, A., & Jarlborg, T. (2021). Superconductivity above 100 K in MgB₂-type structures and in hydrogen-rich compounds. *Journal of Superconductivity and Novel Magnetism*. https://doi.org/10.1007/s10948-021-05995-0
+
+This paper does not exist. The DOI does not resolve. Bianconi and Jarlborg have published together on related topics (e.g., *EPL* 112, 37001, 2015; *J. Supercond. Nov. Magn.* 31, 689–695, 2018), but not this paper, not in this journal, and not in 2021. This is a fully fabricated citation.
+
+Notably, this fabrication occurred on the hardest question in the set—the one requiring synthesis of experimental, theoretical, and reproducibility issues in a niche field.
+
+---
+
+## 5. Discussion
+
+### 5.1 Author Misattribution as the Dominant Failure Mode
+
+Our most important finding is that **fabrication is not the primary threat to citation integrity**. Only 1 out of 45 citations (2%) was fully fabricated. In contrast, 12 out of 45 (27%) were real papers with distorted metadata.
+
+The dominant distortion was **author misattribution**: citing a real paper but crediting it to the wrong authors. This error type is particularly dangerous because it survives common verification methods. A researcher who checks the DOI will find that the paper exists and may assume the citation is correct. A researcher who searches the title will find the paper and may not notice that the authors are wrong.
+
+This suggests that research agents must implement **author-level verification**, not just DOI resolution or title matching.
+
+### 5.2 Model Differences
+
+Claude was the most accurate model (80%), followed by ChatGPT (73%) and DeepSeek (60%). However, ChatGPT produced the only fabrication. This suggests that accuracy rate alone does not capture the full risk profile of a model. A model that is mostly accurate but occasionally fabricates may be more dangerous than a model that is consistently slightly distorted.
+
+DeepSeek's high distortion rate (40%) is notable. It produced citations with correct DOIs, correct titles, and correct journals—but wrong authors. This pattern suggests that DeepSeek may be retrieving real papers but failing to correctly attribute them.
+
+### 5.3 Implications for Research Agents
+
+Research agents that present citations to users should:
+
+1. **Verify authors, not just DOIs.** A DOI resolving is not sufficient evidence that a citation is correct.
+2. **Cross-check metadata against multiple sources.** Author names, years, and venues should be verified independently.
+3. **Flag distortions, not just fabrications.** A citation that is "mostly correct" can still mislead.
+4. **Consider model-specific risk profiles.** Models differ in their failure modes, and agent designers should account for this.
+
+### 5.4 Limitations
+
+This study has several limitations:
+
+- **Small sample size.** 45 citations is enough to identify patterns but not to estimate population-level rates with high confidence.
+- **Single run per prompt.** We did not test for consistency across multiple runs.
+- **Unspecified model versions.** We did not record exact version numbers.
+- **Limited domains.** We tested three domains.
+- **Manual verification.** While we checked against authoritative sources, some obscure papers may have been missed.
+
+---
+
+## 6. Conclusion
+
+We evaluated citation integrity in three frontier language models under research-agent conditions. We found that fabrication is rare (2%), but distortion is common (27%). The dominant failure mode is author misattribution: citing real papers but crediting them to the wrong authors. This error type is dangerous because it survives common verification methods. Research agents must implement author-level verification to ensure citation integrity.
+
+Future work should expand the sample size, test more models, and develop automated tools for detecting author misattribution in generated citations.
+
+---
+
+## Acknowledgments
+
+The author thanks GrayTell Labs for supporting this research.
+
+---
+
+## References
+
+Bhattacharyya, M., Miller, V. M., Bhattacharyya, D., & Miller, L. E. (2023). High Rates of Fabricated and Inaccurate References in ChatGPT-Generated Medical Content. *Cureus*, 15(5), e39238.
+
+Bohnet, B., Tran, V. Q., Verga, P., et al. (2022). Attributed Question Answering: Evaluation and Modeling for Attributed Large Language Models. *arXiv preprint arXiv:2212.08037*.
+
+Ji, Z., Lee, N., Frieske, R., et al. (2023). Survey of Hallucination in Natural Language Generation. *ACM Computing Surveys*, 55(12), 1–38.
+
+Maynez, J., Narayan, S., Bohnet, B., & McDonald, R. (2020). On Faithfulness and Factuality in Abstractive Summarization. *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics*, 1906–1919.
+
+Rashkin, H., Nikolaev, V., Lamm, M., et al. (2021). Measuring Attribution in Natural Language Generation Models. *arXiv preprint arXiv:2112.12870*.
+
+Walters, W. H., & Wilder, E. I. (2023). Fabrication and errors in the bibliographic citations generated by ChatGPT. *Scientific Reports*, 13, 14045.
