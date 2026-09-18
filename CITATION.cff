@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Citation Integrity in Frontier Language Models: Author Misattribution and Fabrication in Research-Agent Conditions"
+abstract: >
+  We evaluate the citation accuracy of three frontier language models—DeepSeek,
+  Claude, and ChatGPT—when forced to provide formal academic references in
+  response to research questions. Across 15 responses and 45 citations spanning
+  three domains, we find that 71% of citations were real and accurate, 27% were
+  real but distorted (primarily author misattribution), and 2% were fully
+  fabricated. The dominant failure mode is not fabrication of non-existent
+  papers but distortion of existing papers, most commonly by attributing them
+  to incorrect authors.
+authors:
+  - family-names: Sapkota
+    given-names: Anubhav
+    affiliation: GrayTell Labs
+    email: sapkotaanubhav91@gmail.com
+date-released: 2026-09-18
+version: "1.0.0"
+url: "https://github.com/graytell/citation-integrity-llm"
+repository-code: "https://github.com/graytell/citation-integrity-llm"
+license: Apache-2.0
+keywords:
+  - citation integrity
+  - large language models
+  - research agents
+  - hallucination
+  - author misattribution
+  - LLM evaluation
+  - AI safety
+  - reproducibility
+type: software
