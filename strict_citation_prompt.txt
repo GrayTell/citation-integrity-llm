@@ -1,0 +1,87 @@
+STRICT CITATION PROMPT — GrayTell Labs Citation Integrity Study
+===============================================================
+
+Used to evaluate citation accuracy in DeepSeek, Claude, and ChatGPT.
+Date of use: September 2026
+Study: Citation Integrity in Frontier Language Models
+Author: Anubhav Sapkota (GrayTell Labs)
+
+---------------------------------------------------------------
+PROMPT TEXT (copy everything between the dashed lines)
+---------------------------------------------------------------
+
+Answer the following research question and provide 4-5 academic citations.
+
+You MUST include a separate "References" section.
+Each reference must follow exactly:
+
+Authors. (Year). Title. Venue. DOI/URL (if available).
+
+Do not just describe studies - list the actual papers.
+
+Question: [PASTE QUESTION HERE]
+
+---------------------------------------------------------------
+END OF PROMPT
+---------------------------------------------------------------
+
+QUESTIONS USED
+--------------
+
+Q3 (Biology / Medicine):
+What is the current evidence on CRISPR-based therapies for sickle cell disease?
+
+Q4 (Biology / Medicine):
+How does the gut microbiome influence neurodegenerative diseases such as
+Parkinson's and Alzheimer's?
+
+Q5 (Physics):
+What is the current status of research on high-temperature superconductivity
+in hydrogen-rich materials?
+
+NOTE: Q1 and Q2 (AI/ML questions on Constitutional AI and RAG limitations)
+were pilot questions. Models did not provide formal citations for these
+even when asked, so they were excluded from the citation analysis.
+
+---------------------------------------------------------------
+VERIFICATION PROTOCOL
+---------------------------------------------------------------
+
+For each citation the model produces, verify using:
+
+  - Google Scholar (exact title search)
+  - PubMed (for biomedical papers)
+  - DOI resolution (https://doi.org/[DOI])
+  - Publisher website (NEJM, Nature, Science, etc.)
+
+Check each field:
+  [ ] Does the paper exist?
+  [ ] Are the authors correct?
+  [ ] Is the year correct?
+  [ ] Is the title correct?
+  [ ] Is the venue (journal/conference) correct?
+  [ ] Does the DOI resolve to the correct paper?
+
+Label each citation as:
+
+  - Real & Accurate       - all fields correct
+  - Real but Distorted    - paper exists, but at least one field is wrong
+  - Fully Fabricated      - no evidence the paper exists
+
+---------------------------------------------------------------
+RESULTS SUMMARY
+---------------------------------------------------------------
+
+Total citations evaluated:      45
+Real & Accurate:                32  (71%)
+Real but Distorted:             12  (27%)
+Fully Fabricated:                1  (2%)
+
+See ../data/citations_scored.csv for full scoring data.
+See ../data/raw_responses.md for full unedited model responses.
+
+---------------------------------------------------------------
+LICENSE
+---------------------------------------------------------------
+
+Apache License 2.0
